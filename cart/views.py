@@ -91,5 +91,4 @@ def increment_quantity(request):
     item.save()
 
     cart_items = get_cart_items(request)
-    request.session.modified = True
     return redirect('cart:cart_list')
