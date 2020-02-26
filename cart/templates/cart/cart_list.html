@@ -6,10 +6,10 @@
 <br><br><br><br>
 <div class="container">
   <div class="card shopping-cart">
-          <div class="card-header bg-dark text-light">
+          <div class="card-header bg-light text-dark">
                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-               Shipping cart
-               <a href="{% url 'clothing:cloth_list' %}" class="btn btn-outline-info btn-sm pull-right">Continiu shopping</a>
+               Shopping cart
+               <a href="{% url 'clothing:cloth_list' %}" class="btn btn-outline-info btn-sm pull-right">Continue shopping</a>
                <div class="clearfix"></div>
           </div>
           {% if cart %}
@@ -28,7 +28,7 @@
                   </div>
                   <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
                       <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                          <h6><strong>£ {{ item.product.price }} <span class="text-muted">x</span></strong></h6>
+                          <h6><strong>£ {{ item.total_price }} <span class="text-muted">x</span></strong></h6>
                           <p class="ml-4 mt-1 text-sm">{{ item.date_added|date:'Y m d' }}</p>
                       </div>
                       <div class="col-4 col-sm-4 col-md-4">
@@ -40,6 +40,19 @@
                               <input type="submit" value="update quantity"
                                   class="my-1 btn text-sm btn-sm btn-primary" />
                           </form>
+                          <div class="col-xx-1">
+                            <Select id="selectSize" class="btn btn-warning"
+                                style="margin-right:30px; height: 40px;">
+                                <option selected>Size</option>
+                                <option value="1">XS</option>
+                                <option value="2">S</option>
+                                <option value="3">M</option>
+                                <option value="4">L</option>
+                                <option value="5">XL</option>
+                                <option value="6">2XL</option>
+                                <option value="7">3XL</option>
+                            </select>
+                        </div>
                       </div>
                       <div class="col-2 col-sm-2 col-md-2 text-right">
                           <a href='{% url "cart:remove_from_cart" item.id %}'>
@@ -60,10 +73,16 @@
                       </div>
                       {% if cart %}
                       <div class="pull-right" style="margin: 10px">
-                          <a href="{% url 'cart:complete_checkout' %}" class="btn btn-success pull-right">Checkout</a>
-                          <div class="pull-right" style="margin: 5px">
-                            <div>Postage: <b>£5.00</b></div>
-                      <div>Total price: {{ cart.get_total_amount }}<b>£50.00</b></div>
+                        <br><br><br>
+                        <div class="pull-right" style="margin: 15px">
+                        <div>Postage: <b>£5.00</b></div>
+                        
+                        <div>Total price: {{ cart.get_total_amount }}<b>£50.00</b></div>
+
+                          <a href="{% url 'cart:complete_checkout' %}" class="btn btn-success pull-right" style="margin: 10px">Checkout</a>
+                          
+                            
+                      
                   </div>
                   {% endif %}
                   

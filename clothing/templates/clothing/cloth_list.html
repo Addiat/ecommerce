@@ -2,33 +2,50 @@
 {% load static %}
 {% block title %} lowCost - {% endblock title %}
 {% block content %}
-    <h2 class="text-center mb-4">All Clothes</h2>
-       
-    {% if cloth_list %}
-    <div class="media" style="width: 20rem;">
-        <img src="{{ cloth.image.url }}" class="img-thumbnail align-self-start mr-5" alt="{{ cloth.name }}">
-        {% for cloth in cloth_list %}
-        <div class="col my-1">
+<h2 class="text-center mb-4">All Clothes</h2>
+
+{% if cloth_list %}
+<div class="media" style="width: 20rem;">
+    <img src="{{ cloth.image.url }}" class="img-thumbnail align-self-start mr-5" alt="{{ cloth.name }}">
+    {% for cloth in cloth_list %}
+    <div class="col my-1">
+        <a href="{% url 'clothing:cloth_detail' cloth.id %}">
             <div class="card">
-                <img src="{{ cloth.image.url }}" alt="{{ cloth.name }}" style="height: 350px;">
+                <img src="{{ cloth.image.url }}" alt="{{ cloth.name }}" style="height: 200px; width: 200px">
                 <div class="card-body text-center">
                     <h4>{{ cloth.name }}</h4>
                     <p>{{ cloth.material_type }}</p>
                     <p>£ {{ cloth.price }}</p>
-                   
-                    <div class="text-center my-2">
-                    <a href="{% url 'clothing:cloth_detail' cloth.id %}" class="btn btn-md btn-outline-dark">view details</a>
-                        <a href="{% url 'cart:add_to_cart' cloth.id %}" class="btn btn-md btn-outline-dark">Add to cart</a>
-                    </div>
+        </a>
+        <div class="text-center my-2">
+            <div class="row">
+                <div class="col-xx-1">
+                    <Select id="selectSize" class="btn btn-warning"
+                        style="margin-right:30px; height: 40px;">
+                        <option selected>Size</option>
+                        <option value="1">XS</option>
+                        <option value="2">S</option>
+                        <option value="3">M</option>
+                        <option value="4">L</option>
+                        <option value="5">XL</option>
+                        <option value="6">2XL</option>
+                        <option value="7">3XL</option>
+                    </select>
                 </div>
+
+
+                <a href="{% url 'cart:add_to_cart' cloth.id %}" class="btn btn btn-success">Add to bag</a>
             </div>
         </div>
-        {% endfor %}
     </div>
-    {% else %}
-        <p style="color: red; text-align: center; font-size: 16px; font-weight: 500">
-            Cloth store is empty
-        </p>
-    {% endif %}
- 
+</div>
+</div>
+{% endfor %}
+</div>
+{% else %}
+<p style="color: red; text-align: center; font-size: 16px; font-weight: 500">
+    Cloth store is empty
+</p>
+{% endif %}
+
 {% endblock content %}
