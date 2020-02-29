@@ -14,6 +14,7 @@
           </div>
           {% if cart %}
           <div class="row">
+
           {% for item in cart %}
           <div class="card-body">
               <div class="row">
@@ -77,12 +78,14 @@
                         <div class="pull-right" style="margin: 15px">
                         <div>Postage: <b>£5.00</b></div>
                         
-                        <div>Total price: {{ cart.get_total_amount }}<b>£50.00</b></div>
+                        <div>Total price: <b>£{{ items_total_amount }}</b></div>
 
-                          <a href="{% url 'cart:complete_checkout' %}" class="btn btn-success pull-right" style="margin: 10px">Checkout</a>
+                          <a href="{% url 'cart:complete_checkout' %}" class="btn btn-success pull-right" style="margin: 10px">Checkout Securely</a>
                           
                             
                       
+                    
+
                   </div>
                   {% endif %}
                   
