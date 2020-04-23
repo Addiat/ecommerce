@@ -33,4 +33,6 @@ urlpatterns = [
             views.increment_quantity,
             name='increment_quantity'
     ),
+
+    path('payment-success/', views.success, name='payment_success'),
 ]

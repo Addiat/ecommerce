@@ -150,3 +150,11 @@ LOGOUT_REDIRECT_URL = 'login'
 
 ## Cart application configuration
 UNDERLYING_PRODUCT_MODEL = 'clothing.Cloth'
+
+from .secret import  STRIPE_TEST_KEY, STRIPE_LIVE_KEY
+ 
+if DEBUG:
+    # this will be used during development
+    STRIPE_SECRET_KEY = 'sk_test_y9tOdWMC5mxbWS48AYKXPGLG'
+else:
+    STRIPE_SECRET_KEY = 'STRIPE_LIVE_KEY'

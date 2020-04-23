@@ -11,7 +11,7 @@ requirements.txt
 
 # unwanted folders
 media_root/
-
+secret.py
 # C extensions
 *.so
 

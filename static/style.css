@@ -1,0 +1,11 @@
+a:visited {
+    color: black !important;
+ }
+
+ nav .nav-link:visited {
+    color: white !important;
+}
+
+nav .navbar-brand:visited {
+    color: white !important;
+}
