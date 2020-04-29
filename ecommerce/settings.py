@@ -158,3 +158,5 @@ if DEBUG:
     STRIPE_SECRET_KEY = 'sk_test_y9tOdWMC5mxbWS48AYKXPGLG'
 else:
     STRIPE_SECRET_KEY = 'STRIPE_LIVE_KEY'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

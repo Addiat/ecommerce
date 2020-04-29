@@ -81,7 +81,7 @@
  
  
  
-    <main role="main" class="container py-2">
+    <main role="main" class="container py-2" id="root">
  
  
  
@@ -89,40 +89,44 @@
         {% block content %}
  
         {% endblock content %}
-        <div class="row">
-            <div class="col-sm-6" style="background-color:lavender;">
-            <article>
-                <h4 class="title">How to have fab dress collection</h4>
-                <p>
-                    Donne de et le de volupté parce dont dit pleurs d'un,
-                    genoux quel pour tete qu'un d'athlete. Fait de et cette
-                    mensonge mettrait haut l'elégance, yeux la beauté un
-                    aussi qu'elle. Le masque extase monstre mon mal
-                </p>
-                <a href="">read more</a>
-            </article></div>
- 
-            <div class="col-sm-6" style="background-color:lavenderblush;">
-            <article>
-                <h4 class="title">Killer dress patterns for the year</h4>
-                <p>
-                    Donne de et le de volupté parce dont dit pleurs d'un,
-                    genoux quel pour tete qu'un d'athlete. Fait de et cette
-                    mensonge mettrait haut l'elégance, yeux la beauté un
-                    aussi qu'elle. Le masque extase monstre mon mal
-                </p>
- 
-                <a href="">read more</a>
-            </article></div>
-            </div>
+        
+        </main>
            
  
  
  
-        <footer class="blog-footer">
+        <footer>
+            <div class="row py-4 footer-article">
+                <div class="col-sm-6 py-4" style="background-color:lavender;">
+                <article>
+                    <h4 class="title">How to have fab dress collection</h4>
+                    <p>
+                        Donne de et le de volupté parce dont dit pleurs d'un,
+                        genoux quel pour tete qu'un d'athlete. Fait de et cette
+                        mensonge mettrait haut l'elégance, yeux la beauté un
+                        aussi qu'elle. Le masque extase monstre mon mal
+                    </p>
+                    <a href="">read more</a>
+                </article></div>
+     
+                <div class="col-sm-6 py-4" style="background-color:lavenderblush;">
+                <article>
+                    <h4 class="title">Killer dress patterns for the year</h4>
+                    <p>
+                        Donne de et le de volupté parce dont dit pleurs d'un,
+                        genoux quel pour tete qu'un d'athlete. Fait de et cette
+                        mensonge mettrait haut l'elégance, yeux la beauté un
+                        aussi qu'elle. Le masque extase monstre mon mal
+                    </p>
+     
+                    <a href="">read more</a>
+                </article>
+                </div>
+                </div>
+            <div class="blog-footer">
             <p>Paper chase customization company</p>
-            <p>About us</p>
-            <p>Contact us</p>
+            <p><a href="{% url 'clothing:about-us' %}" class="footer-link">About us</a></p>
+            <p><a href="{% url 'clothing:contact_us' %}" class="footer-link">Contact us</a></p>
             <div class="navbar navbar-inverse navbar-static-bottom" role="navigation">
                 <div class="navbar-text pull-left">
                 </div>
@@ -146,6 +150,7 @@
                     &copy; Paperchaselogo Studio, 2020
                 </div>
             </div>
+        </div>
         </footer>
  
         {% bootstrap_javascript jquery='full' %}

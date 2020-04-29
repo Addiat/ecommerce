@@ -9,3 +9,21 @@ a:visited {
 nav .navbar-brand:visited {
     color: white !important;
 }
+
+footer .footer-link {
+    color: white !important;
+ }
+ 
+footer .footer-link:visited {
+     color: white !important;
+ }
+
+ #root {
+    min-height: 80vh;
+}
+
+.footer-article {
+    color: black;
+    text-align: left;
+    padding: 22px 0px;
+ }
